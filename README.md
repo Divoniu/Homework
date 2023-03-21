@@ -1,3 +1,3 @@
 Live project: 
 
-htttps://Divoniu.github.io/Homework
+htttps://Divoniu.github.io/Homework/
