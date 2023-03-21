@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { InputElement } from "./components/InputElement";
+import { SearchBar } from "./components/SearchBar";
 
 function App() {
+  const noSpecialCharactersAllowed = /([\[\]'";:/\\.,><?!@#$%^&*|{}_])/;
+  const checkForPhoneNumber = /(^\+\d{0,11}$)|(^\d{0,10}$)/;
+  const checkForTextInput = /^[a-zA-Z ]*$/;
+  const [typeOfInput, setTypeOfInput] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Click to change the type of data you want to insert:</p>
+      <button
+        className="switchInputType"
+        onClick={() =>
+          setTypeOfInput((prevState) => {
+            return !prevState;
+          })
+        }
+      >
+        {typeOfInput ? "Number" : "Text"}
+      </button>
+
+      <InputElement
+        noSpecialCharactersAllowed={noSpecialCharactersAllowed}
+        typeOfInput={typeOfInput}
+        checkForPhoneNumber={checkForPhoneNumber}
+        checkForTextInput={checkForTextInput}
+      />
+      <SearchBar />
     </div>
   );
 }

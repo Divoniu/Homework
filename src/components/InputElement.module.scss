@@ -1,0 +1,29 @@
+.inputElementContainer {
+}
+
+.errorSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.liveElementContainer {
+  position: absolute;
+  top: 15rem;
+
+  .label {
+    margin: 0.5rem;
+  }
+  .liveElement {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+
+.mainError {
+  color: firebrick;
+}
+.infoMessage {
+  color: crimson;
+}
