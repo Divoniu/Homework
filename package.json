@@ -1,7 +1,7 @@
 {
   "name": "grgl-components",
   "version": "0.1.0",
-  "homepage": "htttps://Divoniu.github.io/Homework",
+  "homepage": "https://Divoniu.github.io/Homework",
   "private": true,
   "dependencies": {
     "axios": "^1.3.4",
